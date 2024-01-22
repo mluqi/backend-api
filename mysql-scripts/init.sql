@@ -1,18 +1,12 @@
--- init.sql
-
--- Buat database jika belum ada
 CREATE DATABASE IF NOT EXISTS my_db;
 
--- Gunakan database yang baru dibuat
 USE my_db;
 
--- Buat tabel customers
 CREATE TABLE IF NOT EXISTS customers (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255)
 );
 
--- Buat tabel transactions
 CREATE TABLE IF NOT EXISTS transactions (
   id INT AUTO_INCREMENT PRIMARY KEY,
   customer_id INT,

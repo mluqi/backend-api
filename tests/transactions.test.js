@@ -63,9 +63,6 @@ test('Get Transactions with Query and Sorted by Customer Name', async () => {
 
 // Test case untuk mendapatkan list transaksi tanpa data
 test('Get Transactions Without Data', async () => {
-  // Anggap ada kondisi di mana tidak ada data dalam tabel transactions
-  // Hapus atau nonaktifkan data pada database untuk skenario ini
-  // atau sesuaikan dengan kondisi yang sesuai pada lingkungan pengujian Anda.
   const results = await getTransactions('nonexistentmenu', false);
   expect(results).toBeDefined();
   expect(results.length).toBe(0);
