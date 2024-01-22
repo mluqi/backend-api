@@ -18,3 +18,5 @@ CREATE TABLE IF NOT EXISTS transactions (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (customer_id) REFERENCES customers(id)
 );
+
+INSERT INTO customers (id, name) VALUES (01, 'luqi');

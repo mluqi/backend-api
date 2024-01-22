@@ -23,7 +23,7 @@ services:
   nodeapp:
     container_name: nodeappcontainer
     build: .
-    command: bash -c 'while do sleep 1; done; npm start'
+    # command: ./wait-for-it.sh -t 40 mysql_db:3306 -- npm start;
     ports:
       - 3000:3000
     expose:
@@ -46,4 +46,3 @@ services:
 networks:
   internalnet:
     driver: bridge
-

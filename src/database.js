@@ -9,7 +9,7 @@ const db = mysql.createConnection({
     // port                : 3306
 
     multipleStatements  : true,
-    host                : 'mysql',
+    host                : 'mysqldb',
     user                : 'admin',
     password            : '123',
     database            : 'my_db'
