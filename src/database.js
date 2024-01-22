@@ -9,10 +9,10 @@ const db = mysql.createConnection({
     // port                : 3306
 
     multipleStatements  : true,
-    host                : 'localhost',
-    user                : 'root',
-    password            : '',
-    database            : 'rkd_db'
+    host                : 'mysql',
+    user                : 'admin',
+    password            : '123',
+    database            : 'my_db'
 });
 
 db.connect((err) => {

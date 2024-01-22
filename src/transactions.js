@@ -14,7 +14,7 @@ const createTransaction = (transactionData) => {
     const created_at = new Date().toISOString();
 
     const query = `
-      INSERT INTO transaction (customer_id, menu, price, qty, payment, total, created_at)
+      INSERT INTO transactions (customer_id, menu, price, qty, payment, total, created_at)
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
   
@@ -32,7 +32,7 @@ const createTransaction = (transactionData) => {
 
 // Fungsi untuk mendapatkan list transaksi
 const getTransactions = (query, customer) => {
-let sql = 'SELECT * FROM transaction';
+let sql = 'SELECT * FROM transactions';
   const values = [];
 
   if (query) {

@@ -21,9 +21,9 @@ services:
       - internalnet
 
   nodeapp:
-    container_name: nodeapppcontainer
+    container_name: nodeappcontainer
     build: .
-    # command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; npm start'
+    command: bash -c 'while do sleep 1; done; npm start'
     ports:
       - 3000:3000
     expose:
@@ -39,10 +39,11 @@ services:
       DB_CONNECTION_LIMIT: 10
       SERVER_PORT: 3000
       SERVICE_TAG: prod
-      SERVICE_NAME: nodeapppservice
+      SERVICE_NAME: nodeappservice
     networks:
       - internalnet
 
 networks:
   internalnet:
     driver: bridge
+

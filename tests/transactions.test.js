@@ -7,16 +7,16 @@ test('Get Transactions with Query', async () => {
       .post('/api/new-transaction')
       .send({
         customer_id: '2',
-        menu: 'Item 2',
-        price: 15,
+        menu: 'Burger',
+        price: 15000,
         qty: 3,
         payment: 'Card',
-        total: 45,
+        total: 45000,
       });
   
     const response = await request(app)
       .get('/api/transactions')
-      .query({ query: 'Item' });
+      .query({ query: 'Burger' });
   
     expect(response.status).toBe(200);
     expect(response.body.length).toBeGreaterThan(0);
@@ -25,11 +25,11 @@ test('Get Transactions with Query', async () => {
     const transaction = response.body[0];
     expect(transaction).toHaveProperty('id');
     expect(transaction).toHaveProperty('customer_id', '2');
-    expect(transaction).toHaveProperty('menu', 'Item 2');
-    expect(transaction).toHaveProperty('price', 15);
+    expect(transaction).toHaveProperty('menu', 'Burger');
+    expect(transaction).toHaveProperty('price', 15000);
     expect(transaction).toHaveProperty('qty', 3);
     expect(transaction).toHaveProperty('payment', 'Card');
-    expect(transaction).toHaveProperty('total', 45);
+    expect(transaction).toHaveProperty('total', 45000);
     expect(transaction).toHaveProperty('created_at');
   });
 
@@ -42,7 +42,7 @@ test('Get Transactions Without Query and Customer', async () => {
 
 // Test case untuk mendapatkan list transaksi dengan query
 test('Get Transactions with Query', async () => {
-  const results = await getTransactions('burger', false);
+  const results = await getTransactions('Burger', false);
   expect(results).toBeDefined();
   expect(results.length).toBeGreaterThan(0);
 });
